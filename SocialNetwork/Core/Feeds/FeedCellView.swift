@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct FeedCellView: View {
+    
+    let post: Post
+    
     var body: some View {
         VStack {
             //Image and username
             HStack {
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
-                
-                Text("Username")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
+                if let user = post.user {
+                    Image(user.profileImageUrl ?? "")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                    
+                    Text(user.username)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
                 
                 Spacer()
             }
             .padding(.leading)
             
             // post image
-            Image("rafi-profile")
+            Image(post.imageUrl)
                 .resizable()
                 .scaledToFill()
                 .frame(height: 400)
@@ -62,7 +67,7 @@ struct FeedCellView: View {
             .foregroundStyle(.black)
             
             //Like label
-            Text("23 likes")
+            Text("\(post.likes) likes")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -71,8 +76,8 @@ struct FeedCellView: View {
             
             // caption label
             HStack {
-                Text("Rafiul ").fontWeight(.semibold) +
-                Text("This is a caption for a post")
+                Text("\(post.user?.username ?? "")").fontWeight(.semibold) +
+                Text(post.caption)
             }
             .font(.footnote)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -90,5 +95,5 @@ struct FeedCellView: View {
 }
 
 #Preview {
-    FeedCellView()
+    FeedCellView(post: Post.MockPost[0])
 }
