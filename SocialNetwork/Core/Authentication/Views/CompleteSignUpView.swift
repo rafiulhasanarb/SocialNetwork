@@ -1,5 +1,5 @@
 //
-//  AddEmailView.swift
+//  CompleteSignUpView.swift
 //  SocialNetwork
 //
 //  Created by Rafiul Hasan on 3/7/25.
@@ -7,34 +7,32 @@
 
 import SwiftUI
 
-struct AddEmailView: View {
+struct CompleteSignUpView: View {
     
-    @State private var email: String = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var registerViewModel: RegistrationViewModel
     
     var body: some View {
-        VStack(spacing: 12) {
-            Text("Add your email")
+        VStack(spacing: 12) {            
+            Spacer()
+            
+            Text("Welcome to Social Network \(registerViewModel.username)")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("You will use this email to sign in to your account")
+            Text("Click the button below to complete registration and start using the Social Network app")
                 .font(.footnote)
                 .foregroundStyle(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
-            
-            TextField("Email", text: $email)
-                .autocorrectionDisabled()
-                .autocapitalization(.none)
-                .modifier(CustomTextFeildModifier())
-            
-            NavigationLink {
-                CreateUserNameView()
-                    .navigationBarBackButtonHidden(true)
+                        
+            Button {
+                Task {
+                    try await registerViewModel.createUser()
+                }
             } label: {
-                Text("Next")
+                Text("Complete Sign Up")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -59,5 +57,5 @@ struct AddEmailView: View {
 }
 
 #Preview {
-    AddEmailView()
+    CompleteSignUpView()
 }

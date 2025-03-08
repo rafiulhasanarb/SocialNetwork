@@ -1,5 +1,5 @@
 //
-//  CreatePasswordView.swift
+//  CreateUserNameView.swift
 //  SocialNetwork
 //
 //  Created by Rafiul Hasan on 3/7/25.
@@ -7,30 +7,31 @@
 
 import SwiftUI
 
-struct CreatePasswordView: View {
-    @State private var password: String = ""
+struct CreateUserNameView: View {
+    
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var registerViewModel: RegistrationViewModel
     
     var body: some View {
         VStack(spacing: 12) {
-            Text("Create Password")
+            Text("Create username")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("You will create a password that you will use to log in to your account.")
+            Text("You will use this email to sign in to your account")
                 .font(.footnote)
                 .foregroundStyle(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            TextField("Password", text: $password)
+            TextField("user name", text: $registerViewModel.username)
                 .autocorrectionDisabled()
                 .autocapitalization(.none)
                 .modifier(CustomTextFeildModifier())
             
             NavigationLink {
-                CompleteSignUpView()
+                CreatePasswordView()
                     .navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
@@ -58,5 +59,5 @@ struct CreatePasswordView: View {
 }
 
 #Preview {
-    CreatePasswordView()
+    CreateUserNameView()
 }

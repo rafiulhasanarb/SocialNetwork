@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct User: Codable, Identifiable, Hashable {
-    let id: String
-    let username: String
-    let profileImageUrl: String?
-    let fullname: String
-    let bio: String?
-    let email: String
+    var id: String
+    var username: String
+    var profileImageUrl: String?
+    var fullname: String?
+    var bio: String?
+    var email: String
+    
+    var isCurrentUser: Bool {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return false }
+        return currentUid == id
+    }
 }
 
 

@@ -11,6 +11,8 @@ struct MainTabView: View {
     
     @State private var selectedTab: Int = 0
     
+    let user: User
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             FeedView()
@@ -45,7 +47,7 @@ struct MainTabView: View {
                     selectedTab = 3
                 }
             
-            CurrentUserProfileView(user: User.MockUser[0])
+            CurrentUserProfileView(user: user)
                 .tabItem {
                     Image(systemName: "person")
                 }
@@ -58,5 +60,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(user: User.MockUser[0])
 }
