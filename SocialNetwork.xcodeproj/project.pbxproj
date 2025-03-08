@@ -10,15 +10,29 @@
 		B1AB9CD22D7B58BA00E20652 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B1AB9CD12D7B58BA00E20652 /* FirebaseAuth */; };
 		B1AB9CD42D7B58BA00E20652 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B1AB9CD32D7B58BA00E20652 /* FirebaseFirestore */; };
 		B1AB9CD62D7B58BA00E20652 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B1AB9CD52D7B58BA00E20652 /* FirebaseStorage */; };
+		B1AB9DAB2D7C466900E20652 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1AB9DAA2D7C466900E20652 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B1AB9C522D7AE0DF00E20652 /* SocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B1AB9DB12D7C4D7600E20652 /* Exceptions for "SocialNetwork" folder in "SocialNetwork" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B1AB9C512D7AE0DF00E20652 /* SocialNetwork */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B1AB9C542D7AE0DF00E20652 /* SocialNetwork */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B1AB9DB12D7C4D7600E20652 /* Exceptions for "SocialNetwork" folder in "SocialNetwork" target */,
+			);
 			path = SocialNetwork;
 			sourceTree = "<group>";
 		};
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1AB9DAB2D7C466900E20652 /* Kingfisher in Frameworks */,
 				B1AB9CD22D7B58BA00E20652 /* FirebaseAuth in Frameworks */,
 				B1AB9CD42D7B58BA00E20652 /* FirebaseFirestore in Frameworks */,
 				B1AB9CD62D7B58BA00E20652 /* FirebaseStorage in Frameworks */,
@@ -77,6 +92,7 @@
 				B1AB9CD12D7B58BA00E20652 /* FirebaseAuth */,
 				B1AB9CD32D7B58BA00E20652 /* FirebaseFirestore */,
 				B1AB9CD52D7B58BA00E20652 /* FirebaseStorage */,
+				B1AB9DAA2D7C466900E20652 /* Kingfisher */,
 			);
 			productName = SocialNetwork;
 			productReference = B1AB9C522D7AE0DF00E20652 /* SocialNetwork.app */;
@@ -108,6 +124,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				B1AB9CD02D7B58BA00E20652 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B1AB9DA92D7C466900E20652 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B1AB9C532D7AE0DF00E20652 /* Products */;
@@ -270,9 +287,9 @@
 				DEVELOPMENT_TEAM = L44A9D86S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SocialNetwork/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,9 +316,9 @@
 				DEVELOPMENT_TEAM = L44A9D86S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SocialNetwork/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -349,6 +366,14 @@
 				minimumVersion = 11.9.0;
 			};
 		};
+		B1AB9DA92D7C466900E20652 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -366,6 +391,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B1AB9CD02D7B58BA00E20652 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		B1AB9DAA2D7C466900E20652 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1AB9DA92D7C466900E20652 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

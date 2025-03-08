@@ -15,10 +15,11 @@ struct LoginView: View {
         NavigationStack {
             VStack {
                 // logo image
-                Image(systemName: "photo.fill")
+                Image("insta-logo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 220, height: 100)
+                    .frame(width: 200, height: 200)
+                    .padding(.top, 30)
                 
                 //text fields
                 VStack {

@@ -24,8 +24,9 @@ struct FeedView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Image(systemName: "photo")
-                        .imageScale(.large)
+                    Image("insta-logo")
+                        .resizable()
+                        .frame(width: 32, height: 32)
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {

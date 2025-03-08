@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PostGridView: View {
     
@@ -21,7 +22,7 @@ struct PostGridView: View {
     var body: some View {
         LazyVGrid(columns: gridItems, spacing: 2) {
             ForEach(viewModel.posts) { post in
-                Image(post.imageUrl)
+                KFImage(URL(string: post.imageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: imageDimention, height: imageDimention)
